@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Personal Page2_WC4</title>
+  <style type="text/css">
+  body {
+    /*change default margin&padding*/
+    margin: 0;
+    padding: 0 65px 60px 65px;
+	/*prevent from dislocation under different resolution*/
+	min-width: 1024px;
+	max-width: 100%;
+	font-family: Georgia;
+	background-color: #00527A;
+  }
+
+  h2 {
+    text-align: center;
+	color: #DDA73D;
+	font-size: 3em;
+	position: relative;
+	left: 2em;
+  }
+  
+  .emphasis {
+    text-decoration: underline;
+	font-size: 1.5em;
+	color: #DDA73D;
+  }
+  
+  /*-------------------------------set navigation style-----------------------*/
+  #nav {
+    width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	padding: 0;
+	height: 100px;
+	/*fix the navigation bar on top of the browser*/
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	background-color: #00527A;
+	/*float the navigation bar on the top layer of the page*/
+	z-index: 1;
+  }
+  
+  ul {
+	list-style-type: none;
+	margin: 0 auto;
+	padding: 0;
+	overflow: hidden;
+	/*fix the lists on bottom-center of the nav*/
+	position: absolute;
+	bottom: 0px;
+	left: 107px;
+	/*fix the width to prevent auto newline*/
+	width: 1030px;
+  }
+  
+  li {
+    display: inline-block;
+	text-align: center;
+	border-bottom: dashed 1px #DDA73D;
+	float: left;
+	/*fix the width&margin to prevent auto newline*/
+    width: 190px;
+	margin-left: 15px;
+  }
+    
+  li a {
+    display: block;
+	color: #DDA73D;
+	text-decoration: none;
+	padding: 5px;
+	font-size: 14px;
+  }
+  
+  li a:hover {
+    background-color: #DDA73D;
+	color: #ffffff;
+	font-size: 18px;
+  }
+  
+  /*--------------------------------set project introduction style----------------------*/
+  #projectIntro {
+    margin: 0 auto; 
+	padding-top: 140px;
+	height: 450px;
+	width: 90%;
+	border-bottom: dotted 2px #DDA73D;
+  }
+  
+  #projectIntro img {
+    float: left;
+    width: 280px;
+	margin: 25px 20px 10px 0;
+	opacity: 0.9;
+	border: dotted 3px #DDA73D;
+  }
+  
+  #projectIntro p {
+    text-align: justify;
+	color: #ffffff;
+	line-height: 23px;
+  }
+  
+  /*----------------------------set module details style----------------------------*/  
+  #classTimeTable, #labTimeTable {
+    padding-top: 120px;
+	width: 90%;
+	height: 500px;
+	margin: 0 auto;
+	border-bottom: dotted 2px #DDA73D;
+  }
+      
+  table {
+    width: 90%;
+  	margin: 0 auto; /*make table stay center*/
+	color: #ffffff;
+  }
+
+  th {
+    font-weight: bold;
+    height: 50px;
+    text-align: center;
+    vertical-align: center;
+	border-bottom: solid 2px #DDA73D;
+	padding: 10px;
+  }
+
+  td {
+    font-size: 13px; 
+	padding: 2px 0 2px 0;
+	min-height: 18px;
+	border-bottom: dotted 2px #DDA73D;
+  }
+  
+  td a:link {
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  td a:hover {
+    color: #DDA73D;
+    text-decoration: underline;
+  }
+
+  td a:visited {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  .setcenter {
+    text-align: center;
+  }
+  
+  .alphacolumn {
+    background-color: rgba(221, 167, 61, 0.3);
+  }
+  /*--------------------------------moduleLookup----------------------------------*/
+  #moduleLookup {
+    margin: 0 auto;
+	text-align: center;
+	width: 80%;
+	padding-top: 30px;
+  }
+  
+  #moduleLookup p {
+    color: #ffffff;
+  }
+  
+  /*---------------------------------set uccPhoto style---------------------------*/ 
+  #uccPhoto1 {
+    padding-top: 80px;
+	width: 90%;
+	height: 430px;
+	margin: 0 auto;
+	background-image: url("uccphoto1.jpg");
+	background-repeat: no-repeat;
+	/*make bg_img stay at the bottom of container so that can use padding*/
+	background-position-y: bottom;
+	background-size: 100%;
+  }
+   
+   #uccPhoto2 {
+    padding-top: 80px;
+	width: 90%;
+	height: 430px;
+	margin: 0 auto;
+	background-image: url("uccphoto2.jpg");
+	background-repeat: no-repeat;
+	/*make bg_img stay at the bottom of container so that can use padding*/
+	background-position-y: bottom;
+	background-size: 100%;
+  }
+  
+  /*transparent layer*/  
+  #alphaBox1 {
+    margin-top: 90px;
+    float: left;
+	width: 50%;
+	height: 40%;
+	background-color: rgba(0, 82, 122, 0.7);
+	padding: 40px 15px 30px 15px ;
+  }
+     
+  /*transparent layer*/	 
+  #alphaBox2 {
+	margin-top: 110px;
+	float: right;
+	width: 75%;
+	height: 45%;
+	background-color: rgba(221, 167, 61, 0.7);
+	padding: 40px 15px 30px 15px ;
+  }
+  
+  #p_uccPhoto1 {
+    color: #DDA73D;
+	text-align: left;
+	font-size: 30px;
+  }
+    
+  #p_uccPhoto2 {
+    color: #00527A;
+	text-align: left;
+	font-size: 30px;
+  }
+  
+  .pointto {
+    color: #ffffff;
+	font-size: 12px;
+	float: right;
+	margin-right: 25px;
+  }
+  
+  
+  </style>
+</head>
+
+<body>
+  <!--navigation bar-->
+  <div id="nav">
+	<ul>
+      <li><a href="#projectIntro">HOME</a></li>
+	  <li><a href="#classTimeTable">CLASS TIMETABLE</a></li>
+	  <li><a href="#labTimeTable">LAB TIMETABLE</a></li>
+	  <li><a href="#uccPhoto1">UCC PHOTO I</a></li>
+	  <li><a href="#uccPhoto2">UCC PHOTO II</a></li>
+    </ul>	
+  </div>
+  
+  <!--the introduction block-->
+  <div id="projectIntro">
+    <img src="1459778990_ucc-logo.png" alt="UCC_Logo">
+    <h2>INTRODUCTION</h2>
+    <p><span class="emphasis">Hello</span>, welcome to my homepage. My name is Wangleliu Chen. I come from China, and I am a student of <span class="emphasis">Interactive Media in University College</span> Cork. The MSc in Interactive Media is an intensive taught course focusing on the practical and technical aspects of interactive media. The broad aim of the course is to equip students from a wide range of backgrounds with a thorough understanding of the technology and industry-standard tools used in the digital media sector.</p>
+    <p>My interest to MSc Interactive Media was triggered by my experience on front-end design when I was an undergraduate student. In a university innovative program, my task was to design and develop the front-end part of a network security contest platform. That was my first time to use HTML. Associated with JavaScript, jQuery and Ajax, I went through challenges and complete the program with my team. Particularly, we solved the problem of logging in with Ajax, which gave me a great sense of achivement. However, since I haven't work in IT for years after graduation, I lost most of these knowledge and skills. I hope that after finishing the study of this project, I can retrive my menmory and independently create websites with both functional and aesthetic features. </p>
+  </div>
+  
+  <!--the classTimeTable block-->
+  <div id="classTimeTable">
+    <h2>MY LECTURES ACTIVITIES</h2>
+    <table>
+      <tr>
+	    <th>Module Code</th>
+	    <th>Module Title</th>
+	    <th>Date/Time</th>
+	    <th>Room Code</th>
+		<th>Semester</th>
+	  </tr>
+      <tr>
+	    <td class="setcenter"><a href="https://www.ucc.ie/admin/registrar/modules/?mod=CS6100">CS6100</a></td>
+	    <td class="alphacolumn"><a href="https://www.ucc.ie/admin/registrar/modules/?mod=CS6100">Authoring</a></td>
+	    <td>Monday 12:00-14:00</td>
+	    <td class="setcenter">WGB G02</td>
+		<td class="setcenter">Semester 1</td>
+	  </tr>
+      <tr>
+	    <td class="setcenter"><a href="https://www.ucc.ie/admin/registrar/modules/?mod=CS6101">CS6101</a></td>
+	    <td class="alphacolumn"><a href="https://www.ucc.ie/admin/registrar/modules/?mod=CS6101">Web Development for Digital Media</a></td>
+	    <td>Wednesday 13:00-15:00</td>
+	    <td class="setcenter">WGB G09</td>
+		<td class="setcenter">Semester 1</td>
+	  </tr>
+      <tr>
+	    <td class="setcenter"><a href="https://www.ucc.ie/admin/registrar/modules/?mod=CS6102">CS6102</a></td>
+	    <td class="alphacolumn"><a href="https://www.ucc.ie/admin/registrar/modules/?mod=CS6102">Graphics for Interactive Media</a></td>
+	    <td>Friday 13:00-15:00</td>
+	    <td class="setcenter">WGB G13</td>
+		<td class="setcenter">Semester 1</td>
+	  </tr>
+      <tr>
+	    <td class="setcenter"><a href="https://www.ucc.ie/admin/registrar/modules/?mod=CS6103">CS6103</a></td>
+	    <td class="alphacolumn"><a href="https://www.ucc.ie/admin/registrar/modules/?mod=CS6103">Audio and Sound Engineering</a></td>
+	    <td>Monday 16:00-18:00</td>
+	    <td class="setcenter">WGB G08</td>
+		<td class="setcenter">Semester 1</td>
+      </tr>
+	  <tr>
+	    <td class="setcenter"><a href="https://www.ucc.ie/admin/registrar/modules/?mod=CS6104">CS6104</a></td>
+	    <td class="alphacolumn"><a href="https://www.ucc.ie/admin/registrar/modules/?mod=CS6104">Digital Video Capture and Packaging</a></td>
+	    <td>Wednesday 17:00-19:00</td>
+	    <td class="setcenter">WGB G08</td>
+		<td class="setcenter">Semester 1</td>
+	  </tr>
+	  <tr>
+	    <td class="setcenter"><a href="https://www.ucc.ie/admin/registrar/modules/?mod=CS6111">CS6111</a></td>
+	    <td class="alphacolumn"><a href="https://www.ucc.ie/admin/registrar/modules/?mod=CS6111">3D Graphics and Modelling</a></td>
+	    <td>Tuesday 16:00-18:00</td>
+	    <td class="setcenter">WGB G18</td>
+		<td class="setcenter">Semester 1</td>
+	  </tr>
+	  <tr>
+	    <td class="setcenter"><a href="https://www.ucc.ie/admin/registrar/modules/?mod=CS6105">CS6105</a></td>
+	    <td class="alphacolumn"><a href="https://www.ucc.ie/admin/registrar/modules/?mod=CS6105">Future and Emerging Interaction Technologies</a></td>
+	    <td>Tuesday 12:00-13:30</td>
+	    <td class="setcenter">WGB G01</td>
+		<td class="setcenter">Semester 2</td>
+	  </tr>
+	  <tr>
+	    <td class="setcenter"><a href="https://www.ucc.ie/admin/registrar/modules/?mod=CS6113">CS6113</a></td>
+	    <td class="alphacolumn"><a href="https://www.ucc.ie/admin/registrar/modules/?mod=CS6113">Internet-based Applications</a></td>
+	    <td>Tuesday 16:00-17:30</td>
+	    <td class="setcenter">WGB G18</td>
+		<td class="setcenter">Semester 2</td>
+	  </tr>
+	  <tr>
+	    <td class="setcenter"><a href="https://www.ucc.ie/admin/registrar/modules/?mod=CS6114">CS6114</a></td>
+	    <td class="alphacolumn"><a href="https://www.ucc.ie/admin/registrar/modules/?mod=CS6114">Digital Video Compression and Delivery</a></td>
+	    <td>Monday 12:00-13:30</td>
+	    <td class="setcenter">WGB G16</td>
+		<td class="setcenter">Semester 2</td>
+	  </tr>
+	  <tr>
+	    <td class="setcenter"><a href="https://www.ucc.ie/admin/registrar/modules/?mod=CS6115">CS6115</a></td>
+	    <td class="alphacolumn"><a href="https://www.ucc.ie/admin/registrar/modules/?mod=CS6115">Human Computer Interaction</a></td>
+	    <td>Friday 13:00-14:30</td>
+	    <td class="setcenter">WGB G13</td>
+		<td class="setcenter" >Semester 2</td>
+	  </tr>
+	  <tr>
+	    <td class="setcenter"><a href="https://www.ucc.ie/admin/registrar/modules/?mod=CS6116">CS6116</a></td>
+	    <td class="alphacolumn"><a href="https://www.ucc.ie/admin/registrar/modules/?mod=CS6116">Mobile Multimedia</a></td>
+	    <td>Monday 16:00-17:30</td>
+	    <td class="setcenter">WGB G14</td>
+		<td class="setcenter">Semester 2</td>
+	  </tr>
+	  <tr>
+	    <td class="setcenter"><a href="https://www.ucc.ie/admin/registrar/modules/?mod=CS6117">CS6117</a></td>
+	    <td class="alphacolumn"><a href="https://www.ucc.ie/admin/registrar/modules/?mod=CS6117">Audio Processing</a></td>
+	    <td>Wednesday 13:00-14:30</td>
+	    <td class="setcenter">WGB G18</td>
+		<td class="setcenter">Semester 2</td>
+	  </tr>
+    </table>
+  </div>
+  
+  <!--the labTimeTable block-->
+  <div id="labTimeTable">
+	<h2>MY LAB ACTIVITIES</h2>
+    <table>
+      <tr>
+	    <th>Module Code</th>
+	    <th>Module Title</th>
+	    <th>Date/Time</th>
+	    <th>Room Code</th>
+		<th>Semester</th>
+	  </tr>
+      <tr>
+	    <td class="setcenter"><a href="https://www.ucc.ie/admin/registrar/modules/?mod=CS6100">CS6100</a></td>
+	    <td class="alphacolumn"><a href="https://www.ucc.ie/admin/registrar/modules/?mod=CS6100">Authoring</a></td>
+	    <td>Monday 14:00-15:00</td>
+	    <td class="setcenter">WGB G115</td>
+		<td class="setcenter">Semester 1</td>
+	  </tr>
+      <tr>
+	    <td class="setcenter"><a href="https://www.ucc.ie/admin/registrar/modules/?mod=CS6101">CS6101</a></td>
+	    <td class="alphacolumn"><a href="https://www.ucc.ie/admin/registrar/modules/?mod=CS6101">Web Development for Digital Media</a></td>
+	    <td>Thursday 13:00-15:00</td>
+	    <td class="setcenter">WGB G115</td>
+		<td class="setcenter">Semester 1</td>
+	  </tr>
+      <tr>
+	    <td class="setcenter"><a href="https://www.ucc.ie/admin/registrar/modules/?mod=CS6102">CS6102</a></td>
+	    <td class="alphacolumn"><a href="https://www.ucc.ie/admin/registrar/modules/?mod=CS6102">Graphics for Interactive Media</a></td>
+	    <td>Friday 15:00-16:00</td>
+	    <td class="setcenter">WGB G115</td>
+		<td class="setcenter">Semester 1</td>
+	  </tr>
+      <tr>
+	    <td class="setcenter"><a href="https://www.ucc.ie/admin/registrar/modules/?mod=CS6103">CS6103</a></td>
+	    <td class="alphacolumn"><a href="https://www.ucc.ie/admin/registrar/modules/?mod=CS6103">Audio and Sound Engineering</a></td>
+	    <td>Tuesday 12:00-14:00</td>
+	    <td class="setcenter">WGB G114</td>
+		<td class="setcenter">Semester 1</td>
+      </tr>
+	  <tr>
+	    <td class="setcenter"><a href="https://www.ucc.ie/admin/registrar/modules/?mod=CS6104">CS6104</a></td>
+	    <td class="alphacolumn"><a href="https://www.ucc.ie/admin/registrar/modules/?mod=CS6104">Digital Video Capture and Packaging</a></td>
+	    <td>Thurday 12:00-13:00</td>
+	    <td class="setcenter">WGB G115</td>
+		<td class="setcenter">Semester 1</td>
+	  </tr>
+	  <tr>
+	    <td class="setcenter"><a href="https://www.ucc.ie/admin/registrar/modules/?mod=CS6111">CS6111</a></td>
+	    <td class="alphacolumn"><a href="https://www.ucc.ie/admin/registrar/modules/?mod=CS6111">3D Graphics and Modelling</a></td>
+	    <td>Monday 16:00-15:00</td>
+	    <td class="setcenter">WGB G115</td>
+		<td class="setcenter">Semester 1</td>
+	  </tr>
+	  <tr>
+	    <td class="setcenter"><a href="https://www.ucc.ie/admin/registrar/modules/?mod=CS6105">CS6105</a></td>
+	    <td class="alphacolumn"><a href="https://www.ucc.ie/admin/registrar/modules/?mod=CS6105">Future and Emerging Interaction Technologies</a></td>
+	    <td>None</td>
+	    <td class="setcenter">None</td>
+		<td class="setcenter">Semester 2</td>
+	  </tr>
+	  <tr>
+	    <td class="setcenter"><a href="https://www.ucc.ie/admin/registrar/modules/?mod=CS6113">CS6113</a></td>
+	    <td class="alphacolumn"><a href="https://www.ucc.ie/admin/registrar/modules/?mod=CS6113">Internet-based Applications</a></td>
+	    <td>None</td>
+	    <td class="setcenter">None</td>
+		<td class="setcenter">Semester 2</td>
+	  </tr>
+	  <tr>
+	    <td class="setcenter"><a href="https://www.ucc.ie/admin/registrar/modules/?mod=CS6114">CS6114</a></td>
+	    <td class="alphacolumn"><a href="https://www.ucc.ie/admin/registrar/modules/?mod=CS6114">Digital Video Compression and Delivery</a></td>
+	    <td>None</td>
+	    <td class="setcenter">None</td>
+		<td class="setcenter">Semester 2</td>
+	  </tr>
+	  <tr>
+	    <td class="setcenter"><a href="https://www.ucc.ie/admin/registrar/modules/?mod=CS6115">CS6115</a></td>
+	    <td class="alphacolumn"><a href="https://www.ucc.ie/admin/registrar/modules/?mod=CS6115">Human Computer Interaction</a></td>
+	    <td>None</td>
+	    <td class="setcenter">None</td>
+		<td class="setcenter" >Semester 2</td>
+	  </tr>
+	  <tr>
+	    <td class="setcenter"><a href="https://www.ucc.ie/admin/registrar/modules/?mod=CS6116">CS6116</a></td>
+	    <td class="alphacolumn"><a href="https://www.ucc.ie/admin/registrar/modules/?mod=CS6116">Mobile Multimedia</a></td>
+	    <td>None</td>
+	    <td class="setcenter">None</td>
+		<td class="setcenter">Semester 2</td>
+	  </tr>
+	  <tr>
+	    <td class="setcenter"><a href="https://www.ucc.ie/admin/registrar/modules/?mod=CS6117">CS6117</a></td>
+	    <td class="alphacolumn"><a href="https://www.ucc.ie/admin/registrar/modules/?mod=CS6117">Audio Processing</a></td>
+	    <td>None</td>
+	    <td class="setcenter">None</td>
+		<td class="setcenter">Semester 2</td>
+	  </tr>
+    </table>
+  </div>
+  
+  <div id="moduleLookup"><p>Enter Module Code:<input type="search"></input><button><a target="blank" href="https://www.ucc.ie/admin/registrar/modules">go</a></button></p></div>
+  
+  <!--the UCC photo block-->
+  <div id="uccPhoto1">
+	<div id="alphaBox1">
+	  <p id="p_uccPhoto1">Established in 1845 after a long campaign for a higher education institution in Munster</p>
+	  <a class="pointto" href="https://www.ucc.ie/en/">LEARN MORE</a>
+	</div>
+  </div>
+  
+  <div id="uccPhoto2">
+    <div id="alphaBox2">
+	  <p id="p_uccPhoto2">“80% of UCC’s Interactive Media graduates from the last two years are in full employment” Careers Office UCC</p>
+	  <a class="pointto" href="https://www.ucc.ie/en/ckr05/">LEARN MORE</a>
+	</div>
+  </div>
+
+</body>
+</html>
